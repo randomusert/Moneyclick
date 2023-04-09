@@ -1,5 +1,5 @@
 var score = 0;
 
 function getmoney() {
-    score++;
+    score = score + 20;
 }
