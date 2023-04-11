@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Money click</title>
+    <title>Money clicker</title>
     <script src="./index.js"></script>
 </head>
 <body>
+    <button onclick="Save()">Save Game</button>
     <p>$<span id="score">0</span></p>
     <button onclick="getmoney()"><img src="Assets/5-dollar.png" width="100px" height="90px"/></button>
 
@@ -25,7 +26,7 @@
     <br>
     <br>
     <div class="upgrade-container">
-        <button>cursor[<span id="cursorcost">2</span>] -- <span id="cursors"></span></button>
+        <button onclick="BuyCursors()">cursor[<span id="cursorCost">2</span>] -- <span id="cursors">0</span></button>
     </div>
 </body>
 </html>
