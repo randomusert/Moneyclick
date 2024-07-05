@@ -24,4 +24,5 @@ setInterval(function() {
     score = score + cursors *5;
     document.getElementById("score").innerHTML = score;
 }, 1000)
+//the save function
 function Save(){}
