@@ -9,35 +9,38 @@
     <link href="./output.css" rel="stylesheet">
 </head>
 <body>
-    <button onclick="Save()">Save Game</button>
-    <p>$<span id="score">0</span></p>
-    <button onclick="getmoney()"><img src="Assets/5-dollar.png" width="100px" height="90px"/></button>
-
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="upgrade-container">
-        <button onclick="BuyCursors()">cursor[<span id="cursorCost">2</span>] -- <span id="cursors">0</span></button>
+    <div class="bg-slate-600">
+        <button onclick="Save()">Save Game</button>
+        <p>$<span id="score">0</span></p>
+        <button onclick="getmoney()"><img src="Assets/5-dollar.png" width="100px" height="90px"/></button>
+    
+    
         <br>
-        
-        <button> super cursor</button>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="upgrade-container">
+            <button class="border-2 border-black" onclick="BuyCursors()">cursor[<span id="cursorCost">2</span>] -- <span id="cursors">0</span></button>
+            <br>
+            
+            <button class="border-2 border-black" onclick="BuySuperCursors()"> super cursor [ <span id="supercursorcost">20</span>] -- <span id="supercursor">0</span></button>
+        </div>
+        <br>
+        <br>
+        <a href="/src/about/index.html" class="text-3xl font-bold underline">about</a>
+        <a href="https://github.com/tinteeam/Moneyclick"><img src="/src/Assets/GitHub-Symbol.png" width="180px" height="100px"></a>
+        <a href="">
+            <button ></button>
+        </a>
     </div>
-    <br>
-    <br>
-    <a href="/about/index.html" class="text-3xl font-bold underline">about</a>
-    <a href="https://github.com/tinteeam/Moneyclick"><img src="/Assets/GitHub-Symbol.png" width="180px" height="100px"></a>
-    <a href="">
-        <button ></button>
-    </a>
+    
 </body>
 </html>
