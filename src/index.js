@@ -6,6 +6,8 @@ var cursors = 0;
 var clickPower = 5
 var SuperCursorCost = 20
 var SuperCursor  = 0
+var clicker = 0
+var clickerCost = 0
 //load the save on the website loading
 window.onload = function() {
     Load()
