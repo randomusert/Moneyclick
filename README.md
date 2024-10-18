@@ -12,4 +12,5 @@ updated
 # Q&A
 
 Q: what is a patch update?
+
 A: it is a quick update For patch and fixing The game
