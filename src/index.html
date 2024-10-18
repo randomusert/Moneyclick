@@ -9,13 +9,12 @@
     <link href="./output.css" rel="stylesheet">
 </head>
 <body>
-    <div class="bg-slate-600 flex-1 h-dvh">
-        <button onclick="Save()">Save Game</button>
+    <div class="bg-slate-600">
+        
         <p>$<span id="score">0</span></p>
-        <button onclick="getmoney()"><img src="Assets/5-dollar.png" width="100px" height="90px"/></button>
+        <button onclick="getmoney()"><img src="Assets/5-dollar.png" width="500px" height="900px"/></button>
     
     
-        <br>
         <br>
         <br>
         <br>
@@ -24,7 +23,7 @@
         <br>
         <br>
         
-        <div class="upgrade-container">
+        <div id="upgrade-container" class="right-4">
             <button class="border-2 border-black" onclick="BuyCursors()">cursor[<span id="cursorCost">2</span>] -- <span id="cursors">0</span></button>
             <br>
             
@@ -32,6 +31,10 @@
         </div>
         <br>
         <br>
+        <a href="/src/about/index.html" class="text-3xl font-bold underline">about</a>
+        <a href="https://github.com/tinteeam/Moneyclick"><img src="/src/Assets/GitHub-Symbol.png" width="180px" height="100px"></a>
+        <a href="/src/guide/index.html">
+            <button class="hover:bg-gray-800" >guide</button>
         <a href="/about/index.html" class="text-3xl font-bold underline">about</a>
         <a href="https://github.com/tinteeam/Moneyclick">
             <h1 class="text-xl">Source code</h1>
