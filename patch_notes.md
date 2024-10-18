@@ -26,7 +26,7 @@
 
 - money theme
 
-# 0.6.3 patches
+# 0.6.3 patch 1
 
 - no borders
 
@@ -35,3 +35,5 @@
 -  fixed guide page still WIP
 
 - tried to fix a screenshot for guide
+
+
