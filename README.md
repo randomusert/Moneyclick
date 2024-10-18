@@ -6,3 +6,10 @@ click the money to get money
 updated
 ![image](https://user-images.githubusercontent.com/127417963/230851424-286a754e-4b54-49c9-a021-10ee3fc20862.png)
 ![patch notes](https://github.com/randomusert/Moneyclick/blob/main/patch_notes.md)
+
+
+
+# Q&A
+
+## what is a patch update?
+## it is a quick update For patch and fixing The game
