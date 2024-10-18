@@ -11,5 +11,5 @@ updated
 
 # Q&A
 
-## what is a patch update?
-## it is a quick update For patch and fixing The game
+Q: what is a patch update?
+A: it is a quick update For patch and fixing The game
