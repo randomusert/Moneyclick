@@ -14,3 +14,10 @@ updated
 Q: what is a patch update?
 
 A: it is a quick update For patch and fixing The game
+
+
+# Known issues
+----------------------------
+
+- on first load the console shows a error! Don't worry tough it is being that the savedgame variable being null since it doesn't have any data stored to it
+- the buttons on the site doesn't show any amounts of upgrades on reload. this seems to be because DOM doesn't load those
