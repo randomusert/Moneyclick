@@ -10,14 +10,20 @@ updated
 
 
 # Q&A
-------------------
+
 Q: what is a patch update?
 
 A: it is a quick update For patch and fixing The game
 
 
+---------------------------------------------------------
+Q: is there a nextjs version coming ever
+
+A: Yes. it just is being started
+
+
 # Known issues
-----------------------------
+
 
 - on first load the console shows a error! Don't worry tough it is being that the savedgame variable being null since it doesn't have any data stored to it
 - the buttons on the site doesn't show any amounts of upgrades on reload. this seems to be because DOM doesn't load those
