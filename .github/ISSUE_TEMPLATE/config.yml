@@ -1,1 +1,6 @@
 blank_issues_enabled: false
+contact_links:
+  - name: dev issues
+    url: https://github.com/tinteeam/Moneyclick/issues
+  - name: vercel deployment
+    url: https://moneyclick.vercel.app/
