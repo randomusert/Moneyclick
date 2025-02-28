@@ -45,6 +45,9 @@ function BuySuperCursors() {
 
 function getmoney() {
     score = score + clickPower;
+    game.clicks++;
+    game.totalMoney += clickPower;
+    
     document.getElementById("score").innerHTML = score;
 }
 
@@ -55,6 +58,10 @@ setInterval(function() {
     document.getElementById("score").innerHTML = score;
 }, 1000)
 
+
+setInterval(function() {
+    checkAchievements();
+}, 1000)
 
 setInterval(function() {
     score = score + SuperCursor * 10
