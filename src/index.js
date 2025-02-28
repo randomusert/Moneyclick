@@ -70,7 +70,10 @@ function Save(){
         cursors: cursors,
         clickPower:clickPower,
         SuperCursor: SuperCursor,
-        SuperCursorCost: SuperCursorCost 
+        SuperCursorCost: SuperCursorCost,
+        clicks: game.clicks,
+        totalMoney: game.totalMoney,
+        unlockedAchievements: achievements.filter(achievement => achievement.unlocked).map(achievement => achievement.id) 
     }
     localStorage.setItem("gamesave", JSON.stringify(gamesave))
 }
@@ -85,6 +88,16 @@ function Load() {
     if (typeof SavedGame.clickPower !== "undefined") clickPower = SavedGame.clickPower
     if (typeof SavedGame.SuperCursorCost !== "undefined") SuperCursorCost = SavedGame.SuperCursorCost
     if(typeof SavedGame.SuperCursor !== "undefined") SuperCursor  = SavedGame.SuperCursor
+    if(typeof SavedGame.clicks !== "undefined") game.clicks = SavedGame.clicks
+    if(typeof SavedGame.totalMoney !== "undefined") game.totalMoney = SavedGame.totalMoney
+    if(typeof SavedGame.unlockedAchievements !== "undefined") {
+        SavedGame.unlockedAchievements.forEach(id => {
+            const achievement = achievements.find(achievement => achievement.id === id);
+            if (achievement) {
+                achievement.unlocked = true;
+            }
+        });
+    }
 }
 
 
@@ -101,4 +114,72 @@ function BuyClickers() {
         
 
     }
+}
+
+//game object
+const game = {
+    clicks: 0,
+    totalMoney: 0,
+    // Other game properties
+};
+
+
+//avancements array
+const achievements = [
+    {
+        id: "first_click",
+        name: "First Click!",
+        description: "Click the money once.",
+        condition: (game) => game.clicks >= 1,
+        unlocked: false
+    },
+    {
+        id: "hundred_clicks",
+        name: "Click Centurion",
+        description: "Click the money 100 times.",
+        condition: (game) => game.clicks >= 100,
+        unlocked: false
+    },
+    {
+        id: "thousand_dollars",
+        name: "Thousandaire",
+        description: "Accumulate $1,000.",
+        condition: (game) => game.totalMoney >= 1000,
+        unlocked: false
+    },
+    // Add more achievements as needed
+];
+
+
+
+// advancements
+
+
+
+function Advancements() {
+    console.log("not implemented yet")
+}
+
+function displayAchievement(achievement) {
+    const notification = document.createElement("div");
+    notification.className = "fixed top-5 right-5 bg-green-500 text-white p-4 rounded-lg shadow-lg text-lg";
+    notification.innerText = `🎉 Achievement Unlocked: ${achievement.name} - ${achievement.description}`;
+    
+    document.body.appendChild(notification);
+
+    setTimeout(() => {
+        notification.remove();
+    }, 5000);
+}
+
+
+
+function checkAchievements() {
+    achievements.forEach(achievement => {
+        if (!achievement.unlocked && achievement.condition(game)) {
+            achievement.unlocked = true;
+            displayAchievement(achievement);
+            saveAchievements();
+        }
+    });
 }
