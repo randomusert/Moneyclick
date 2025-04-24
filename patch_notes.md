@@ -36,4 +36,9 @@
 
 - tried to fix a screenshot for guide
 
+# 0.6.4
+- add patch notes as a page
 
+- add credits page
+
+- add server
