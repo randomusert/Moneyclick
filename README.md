@@ -32,3 +32,12 @@ A: Yes. it just is being started
 
 - on first load the console shows a error! Don't worry tough it is being that the savedgame variable being null since it doesn't have any data stored to it
 - the buttons on the site doesn't show any amounts of upgrades on reload. this seems to be because DOM doesn't load those
+
+
+
+# server
+the game now has a custom server to host the game. 
+
+please install the dependencies before using.
+
+the server is built using express js
