@@ -40,3 +40,5 @@
 - add patch notes as a page
 
 - add credits page
+
+- add server

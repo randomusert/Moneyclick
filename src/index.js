@@ -127,6 +127,7 @@ function BuyClickers() {
 const game = {
     clicks: 0,
     totalMoney: 0,
+    clickers: 0,
     // Other game properties
 };
 
@@ -154,7 +155,20 @@ const achievements = [
         condition: (game) => game.totalMoney >= 1000,
         unlocked: false
     },
-    // Add more achievements as needed
+    {
+        id: "million_dollars",
+        name: "Millionaire",
+        description: "get 1 million $",
+        condition: (game) => game.totalMoney >= 1000000,
+        unlocked: false
+    },
+    {
+        id: "thousand_clicks",
+        name: "Ultra efficient clicker",
+        description: "click one million times. grazy to get without an auto clicker",
+        condition: (game) => game.clicks >= 1000,
+        unlocked: false
+    }
 ];
 
 
@@ -163,9 +177,6 @@ const achievements = [
 
 
 
-function Advancements() {
-    console.log("not implemented yet")
-}
 
 function displayAchievement(achievement) {
     const notification = document.createElement("div");
