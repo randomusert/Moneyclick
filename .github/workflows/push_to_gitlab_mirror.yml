@@ -14,14 +14,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Show local refs
-        run: |
-         git show-ref
-
-      - name: Show GitLab remote refs
-        run: |
-           git ls-remote gitlab
-       
+      
       - name: Mirror to GitLab
         run: |
           git remote add gitlab https://oauth2:${{ secrets.GITLAB_TOKEN }}@gitlab.com/${{ secrets.GITLAB_REPO }}.git
