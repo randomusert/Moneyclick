@@ -1,0 +1,20 @@
+name: Mirror to GitLab
+
+on:
+  push:
+    branches:
+      - main # or 'master' or any branch you want to mirror
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Important: we want full history for pushing
+
+      - name: Mirror to GitLab
+        run: |
+          git remote add gitlab https://oauth2:${{ secrets.GITLAB_TOKEN }}@${{ secrets.GITLAB_REPO#https:// }}
+          git push --mirror gitlab
