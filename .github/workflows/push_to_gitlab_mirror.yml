@@ -3,7 +3,8 @@ name: Mirror to GitLab
 on:
   push:
     branches:
-      - main # or 'master' or any branch you want to mirror
+      - main
+  workflow_dispatch:
 
 jobs:
   mirror:
@@ -12,9 +13,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Important: we want full history for pushing
+          fetch-depth: 0
 
       - name: Mirror to GitLab
         run: |
-          git remote add gitlab https://oauth2:${{ secrets.GITLAB_TOKEN }}@${{ secrets.GITLAB_REPO }}
+          git remote add gitlab https://oauth2:${{ secrets.GITLAB_TOKEN }}@gitlab.com/${{ secrets.GITLAB_REPO }}.git
           git push --mirror gitlab
