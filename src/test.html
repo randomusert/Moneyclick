@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Money Clicker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-background text-money font-sans h-screen">
+
+  <!-- Top Bar -->
+  <div class="w-full bg-surface text-gold text-xl font-display p-4 shadow-md flex justify-center">
+    💵 Money: <span id="money" class="ml-2 font-bold">$0</span>
+  </div>
+
+  <!-- Main Area -->
+  <div class="flex flex-col lg:flex-row h-full">
+
+    <!-- Center Clicker -->
+    <div class="flex-1 flex justify-center items-center">
+      <button 
+        id="clicker" 
+        class="w-48 h-48 bg-money hover:bg-money-dark text-white font-display text-2xl rounded-full shadow-money-glow active:scale-95 transition">
+        💸 Click!
+      </button>
+    </div>
+
+    <!-- Upgrades Sidebar -->
+    <div class="w-full lg:w-80 bg-surface p-4 border-l border-money overflow-y-auto">
+      <h2 class="text-gold font-display text-lg mb-4">Upgrades</h2>
+      
+      <div class="space-y-4">
+        <button class="w-full bg-gold hover:bg-gold-dark text-surface py-2 px-4 rounded-xl shadow-gold-glow text-left">
+          🏦 Hire Bank Manager ($100)
+        </button>
+        <button class="w-full bg-gold hover:bg-gold-dark text-surface py-2 px-4 rounded-xl shadow-gold-glow text-left">
+          🏭 Buy ATM ($500)
+        </button>
+        <button class="w-full bg-gold hover:bg-gold-dark text-surface py-2 px-4 rounded-xl shadow-gold-glow text-left">
+          🏙 Invest in Stocks ($1000)
+        </button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

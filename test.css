@@ -3,23 +3,20 @@
 .fixed {
   position: fixed;
 }
-.mt-auto {
-  margin-top: auto;
-}
 .block {
   display: block;
 }
 .flex {
   display: flex;
 }
+.h-dvh {
+  height: 100dvh;
+}
 .h-full {
   height: 100%;
 }
 .h-screen {
   height: 100vh;
-}
-.min-h-screen {
-  min-height: 100vh;
 }
 .w-full {
   width: 100%;
@@ -53,14 +50,8 @@
   border-left-style: var(--tw-border-style);
   border-left-width: 1px;
 }
-.object-contain {
-  object-fit: contain;
-}
 .object-cover {
   object-fit: cover;
-}
-.text-center {
-  text-align: center;
 }
 .text-left {
   text-align: left;

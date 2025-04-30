@@ -1,68 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Money clicker</title>
-    <script src="./index.js"></script>
-    <link href="./output.css" rel="stylesheet">
-</head>
-<body>
-    <div class="bg-slate-400 h-dvh">
-    <!--clickable-->
-        <h1 class="text-2xl">$<span id="score" class="text-2xl">0</span></h1>
-        <button onclick="getmoney()"><img src="Assets/5-dollar.png" width="500" height="500"/></button>
-    
-    
-        <br>
-        <br>
-        <br>
-        
-        
-        <div id="upgrade-container" class="right-4">
-            <button class=" border-black text-green-700" onclick="BuyCursors()">cursor[<span id="cursorCost">2</span>] -- <span id="cursors">0</span></button>
-            <br>
-            
-            <button class=" border-black text-green-700" onclick="BuySuperCursors()"> super cursor [ <span id="supercursorcost">20</span>] -- <span id="supercursor">0</span></button>
+<html lang="en" class="bg-gray-900 text-white">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Money Clicker</title>
+    <script src="./index.js" defer></script>
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+  <body class="min-h-screen flex flex-col font-sans">
 
-            
+    <!-- Header -->
+    <header class="bg-green-700 text-white py-4 text-center text-2xl font-bold">
+      💰 Money: $<span id="score">0</span>
+    </header>
+
+    <!-- Main Layout -->
+    <main class="flex-1 flex flex-row justify-between p-6 gap-6">
+
+      <!-- Clicker Section (Left) -->
+      <section class="flex-1 flex flex-col items-center justify-center">
+        <button onclick="getmoney()" class="w-40 h-40 bg-white rounded-full shadow-md overflow-hidden">
+          <img src="Assets/5-dollar.png" alt="Click" class="object-contain " height="300" width="500" />
+        </button>
+      </section>
+
+      <!-- Upgrades Section (Right) -->
+      <aside class="w-80 bg-gray-800 p-4 rounded-lg shadow space-y-6">
+        <!-- Cursors -->
+        <div>
+          <h2 class="text-xl text-green-400 font-bold mb-2">Cursors</h2>
+          <button onclick="BuyCursors()" class="w-full bg-green-600 hover:bg-green-500 text-white py-2 rounded mb-2">
+            Cursor [$<span id="cursorCost">2</span>] — <span id="cursors">0</span>
+          </button>
+          <button onclick="BuySuperCursors()" class="w-full bg-green-600 hover:bg-green-500 text-white py-2 rounded">
+            Super Cursor [$<span id="supercursorcost">20</span>] — <span id="supercursor">0</span>
+          </button>
         </div>
 
-        <div id="building-upgrade-container" class="right-5">
-
-            <button class="text-green-700" onclick="buyclicker()" id="clickerbuy">clicker [ 100] </button>
-            <br>
-            <button class="text-green-700" onclick="Ultraclickerbuys()"> ultra clicker [2000] </button>
-
+        <!-- Buildings -->
+        <div>
+          <h2 class="text-xl text-green-400 font-bold mb-2">Buildings</h2>
+          <button onclick="buyclicker()" id="clickerbuy" class="w-full bg-green-600 hover:bg-green-500 text-white py-2 rounded mb-2">
+            Clicker [$100]
+          </button>
+          <button onclick="Ultraclickerbuys()" class="w-full bg-green-600 hover:bg-green-500 text-white py-2 rounded">
+            Ultra Clicker [$2000]
+          </button>
         </div>
+      </aside>
 
-        <br>
-        <br>
-        
-        <br>
-        <a href="./about/index.html" class="text-3xl font-bold  text-green-700">about</a>
-        <a href="https://github.com/tinteeam/Moneyclick">
-            <h1 class="text-xl text-green-700">Source code</h1>
-        </a>
-        <a href="./guide/index.html">
-            <button class="text-green-700">guide</button>
-        </a>
+    </main>
 
-        <br>
-        <a href="./patch_notes/index.html">
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-center py-4 text-sm">
+      <div class="flex flex-wrap justify-center gap-4 text-green-400">
+        <a href="./about/index.html" class="hover:underline"><button>About</button></a>
+        <a href="https://github.com/tinteeam/Moneyclick" class="hover:underline"> <button>Source (dev)</button></a>
+        <a href="./guide/index.html" class="hover:underline"><button>Guide</button></a>
+        <a href="./patch_notes/index.html" class="hover:underline"> <button>Patch notes</button></a>
+        <a href="./credits/index.html" class="hover:underline"> <button>Credits</button></a>
+      </div>
+    </footer>
 
-            <button class="text-green-700">patch notes</button>
-        </a>
-        <br>
-        <a href="./credits/index.html">
-            <h1 class="text-green-700">credits</h1>
-        </a>
-        <div class="advancements">
-            
-        </div>
-        
-    </div>
-    
-</body>
+  </body>
 </html>
