@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const mclick_theme = require("mclick-theme")
+
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
@@ -7,5 +10,6 @@ module.exports = {
     },
   },
   plugins: [],
+  presets: [mclick_theme]
 }
 

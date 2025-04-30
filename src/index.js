@@ -9,7 +9,10 @@ var SuperCursorCost = 20
 var SuperCursor  = 0
 var clicker = 0
 var clickerCost = 100
-
+var superclicker = 0
+var superclickerCost = 1000
+var Ultraclicker = 2000
+var UltraclickerCost = 0
 
 //load the save on the website loading
 window.onload = function() {
@@ -80,7 +83,11 @@ function Save(){
         SuperCursorCost: SuperCursorCost,
         clicks: game.clicks,
         totalMoney: game.totalMoney,
-        unlockedAchievements: achievements.filter(achievement => achievement.unlocked).map(achievement => achievement.id) 
+        unlockedAchievements: achievements.filter(achievement => achievement.unlocked).map(achievement => achievement.id),
+        clicker: clicker,
+        clickerCost: clickerCost,
+        Ultraclicker: Ultraclicker,
+        UltraclickerCost: UltraclickerCost 
     }
     localStorage.setItem("gamesave", JSON.stringify(gamesave))
 }
@@ -200,4 +207,42 @@ function checkAchievements() {
             saveAchievements();
         }
     });
+}
+
+
+var clickerbuy = document.getElementById("clickerbuy")
+
+function disableclickerbuy() {
+    clickerbuy.addEventListener("click", () => {
+        clickerbuy.disabled = true
+    })
+}
+
+// building upgrades
+
+function buyclicker() {
+    if (score == clickerCost) {
+        clicker++
+        clickPower += 5
+
+        score = score - clickerCost
+        disableclickerbuy()
+    }
+}
+
+var ultraclickerbuy = document.getElementById("buyultraclickers")
+
+function disableUltraclicker() {
+    ultraclickerbuy.addEventListener("click", () => {
+        ultraclickerbuy.disabled = true
+    })
+}
+
+function Ultraclickerbuys() {
+    if (score == UltraclickerCost) {
+       Ultraclicker++;
+       clickPower += 20
+       score = score - UltraclickerCost
+       disableUltraclicker()
+    } 
 }
