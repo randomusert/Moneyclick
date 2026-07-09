@@ -1,6 +1,10 @@
-export default class MclickCounter {
+
+class MclickCounter {
     constructor(initialValue = 0n) {
         this.value = BigInt(initialValue);
+    }
+    version() {
+        return '0.7.0';
     }
 
     increment(amount = 1n) {
@@ -15,7 +19,7 @@ export default class MclickCounter {
         return this.value;
     }
 
-    // Format as words (e.g., "1.2 million", "3.4 billion", etc.)
+        // Format as words (e.g., "1.2 million", "3.4 billion", etc.)
     format() {
         const units = [
             { suffix: "decillion", value: 10n ** 33n },

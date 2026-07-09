@@ -1,6 +1,5 @@
 //variables
 //sets variable called score to zero
-
 var score = 0;
 var cursorCost = 2;
 var cursors = 0;
@@ -13,7 +12,53 @@ var superclicker = 0
 var superclickerCost = 1000
 var Ultraclicker = 2000
 var UltraclickerCost = 0
+var prestigePoints = 0 //prestige points
+var requiredMoney = 1000000 //money required to prestige
+var prestigeMultiplier = 1.2 //multiplier for prestige points
 
+function constructor(initialValue = 0n)
+{
+    this.value = BigInt(initialValue);
+}
+function increment(amount = 1n)
+{
+    this.value += BigInt(amount);
+}
+function set(value) 
+{
+    this.value = BigInt(value);
+}
+function get() 
+{
+    console.log(this.value)
+}
+// Format as words (e.g., "1.2 million", "3.4 billion", etc.)
+function format(value)
+{
+    this.value = BigInt(value);
+    const units = [
+        { suffix: "decillion", value: 10n ** 33n },
+        { suffix: "nonillion", value: 10n ** 30n },
+        { suffix: "octillion", value: 10n ** 27n },
+        { suffix: "septillion", value: 10n ** 24n },
+        { suffix: "sextillion", value: 10n ** 21n },
+        { suffix: "quintillion", value: 10n ** 18n },
+        { suffix: "quadrillion", value: 10n ** 15n },
+        { suffix: "trillion",    value: 10n ** 12n },
+        { suffix: "billion",     value: 10n ** 9n },
+        { suffix: "million",     value: 10n ** 6n },
+        { suffix: "thousand",    value: 10n ** 3n }
+    ];
+
+    for (const unit of units) {
+        if (this.value >= unit.value) {
+            const whole = this.value / unit.value;
+            const decimal = (this.value % unit.value) / (unit.value / 10n);
+            return `${whole}.${decimal} ${unit.suffix}`;
+        }
+    }
+    return this.value.toString(); // just show number for small values
+}
 //load the save on the website loading
 window.onload = function() {
     Load()
@@ -47,11 +92,13 @@ function BuySuperCursors() {
 
 
 function getmoney() {
+    var formatedScorse = format(score)
+    document.getElementById("score").innerHTML = formatedScorse;
     score = score + clickPower;
     game.clicks++;
     game.totalMoney += clickPower;
     
-    document.getElementById("score").innerHTML = score;
+    //document.getElementById("score").innerHTML = formatedScorse;
 }
 
 
@@ -135,6 +182,7 @@ const game = {
     clicks: 0,
     totalMoney: 0,
     clickers: 0,
+    prestigePoints: 0,
     // Other game properties
 };
 
@@ -175,16 +223,18 @@ const achievements = [
         description: "click one million times. grazy to get without an auto clicker",
         condition: (game) => game.clicks >= 1000,
         unlocked: false
+    },
+    {
+        id: "first_prestige",
+        name: "Prestige!",
+        description: "Prestige for the first time.",
+        condition: (game) => game.prestigePoints >= 1,
+        unlocked: false
     }
 ];
 
 
-
 // advancements
-
-
-
-
 function displayAchievement(achievement) {
     let container = document.getElementById("achievement-container");
     if (!container) {
@@ -222,14 +272,6 @@ function displayAchievement(achievement) {
 }
 
 
-
-
-
-
-
-
-
-
 function checkAchievements() {
     achievements.forEach(achievement => {
         if (!achievement.unlocked && achievement.condition(game)) {
@@ -250,7 +292,6 @@ function disableclickerbuy() {
 }
 
 // building upgrades
-
 function buyclicker() {
     if (score == clickerCost) {
         clicker++
@@ -277,3 +318,17 @@ function Ultraclickerbuys() {
        disableUltraclicker()
     } 
 }
+
+// prestige system
+function givePrestigePoints() {
+    if (game.totalMoney >= requiredMoney) {
+        prestigePoints++;
+        game.totalMoney = 0; // Reset total money after prestiging
+        game.clicks = 0;
+        game.clickers = 0;
+        game.prestigePoints += 1;
+        game.clickPower = Math.round(game.clickPower * prestigeMultiplier);
+        clickPower = game.clickPower;
+    }
+}
+ 
